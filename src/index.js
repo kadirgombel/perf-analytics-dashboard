@@ -7,7 +7,9 @@ import store, { history } from "./store";
 import App from "./containers/App";
 import perfAnalytics from "perf-analytics";
 
-const perfAnalyzer = perfAnalytics();
+const perfAnalyzer = perfAnalytics({
+  url: process.env.REACT_APP_API_URL + "/analytics",
+});
 perfAnalyzer.run();
 
 const target = document.querySelector("#root");
