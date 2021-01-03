@@ -31,9 +31,9 @@ function DateTimePicker({ timeSpace, onChange, ...rest }) {
       <TextField
         id="datetime-local-from"
         label="From"
-        type="datetime-local"
+        type="date"
         className={classes.textField}
-        value={timeSpace.from && format(timeSpace.from, "YYYY-MM-DD[T]hh:mm")}
+        value={timeSpace.from && format(timeSpace.from, "YYYY-MM-DD")}
         InputLabelProps={{
           shrink: true,
         }}
@@ -42,8 +42,8 @@ function DateTimePicker({ timeSpace, onChange, ...rest }) {
       <TextField
         id="datetime-local-to"
         label="To"
-        type="datetime-local"
-        value={timeSpace.to && format(timeSpace.to, "YYYY-MM-DD[T]hh:mm")}
+        type="date"
+        value={timeSpace.to && format(timeSpace.to, "YYYY-MM-DD")}
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
