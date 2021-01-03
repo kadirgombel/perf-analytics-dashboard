@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import { render } from "react-dom";
+import "./index.css";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "connected-react-router";
+import store, { history } from "./store";
+import App from "./containers/App";
+import perfAnalytics from "perf-analytics";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const perfAnalyzer = perfAnalytics();
+perfAnalyzer.run();
+
+const target = document.querySelector("#root");
+
+render(
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <App />
+      </div>
+    </ConnectedRouter>
+  </Provider>,
+  target
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

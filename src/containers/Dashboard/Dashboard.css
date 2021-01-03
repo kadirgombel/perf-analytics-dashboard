@@ -1,0 +1,25 @@
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.date-time-picker {
+  margin-right: 10px;
+}
+
+.operations {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.title {
+  text-align: center;
+  color: #6e6362;
+}
+
+.chart {
+  width: 600px;
+  margin-bottom: 10px;
+}
